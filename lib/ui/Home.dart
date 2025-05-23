@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:flashstart/components/Hearder.dart';
 import 'package:flashstart/handle/HomeHandle.dart';
+import 'package:flashstart/utils/globle.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flashstart/main.dart';
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -14,7 +17,7 @@ class Home extends StatefulWidget {
 
 class HomeState extends State<Home> {
   bool isVisiableTips = true;
-
+  String selectedPath = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +38,13 @@ class HomeState extends State<Home> {
                   child: GestureDetector(
                     onTap: ()  {
                       // 弹出文件选择框添加
-                      startSelectedFile();
+                      // startSelectedFile().then((value){
+                      //
+                      //   setState(()=>{
+                      //     selectedPath : value
+                      //   });
+                      // });
+                      // startSelectedFile();
                     },
                     child: Text(
                       "前往添加",
